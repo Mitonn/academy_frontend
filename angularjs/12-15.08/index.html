@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+    <head>
+        <title>12-15.08</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <div data-ng-app="indexDBSample" data-ng-controller="productsController as productsItems">
+            <input type="text" data-ng-model="productsItems.productText" name="product" placeholder="Type product"/>
+            <button data-ng-click="productsItems.addProduct()">Add</button>
+        <table>
+            <div data-ng-repeat="product in productsItems.product">
+            {{product.text}}
+            <button data-ng-click="productsItems.deleteProduct(product.id)">Delete</button>
+            </div>
+        </table>
+        </div>
+        
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+    </body>
+</html>
